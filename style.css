@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    text-align: center;
+    color: white;
+    background: linear-gradient(rgba(0, 60, 20, 0.7), rgba(0, 20, 10, 0.9)),
+                url("images/jungle-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+header {
+    padding: 35px 20px;
+}
+
+header h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 6px black;
+}
+
+header p {
+    font-size: 20px;
+}
+
+.animals-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.animal {
+    background-color: rgba(255, 255, 255, 0.18);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 25px;
+    padding: 20px;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+}
+
+.animal:hover {
+    transform: translateY(-8px) scale(1.04);
+    background-color: rgba(255, 255, 255, 0.32);
+}
+
+.animal img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.animal h2 {
+    margin: 12px 0 6px;
+    font-size: 26px;
+}
+
+.animal p {
+    font-size: 16px;
+}
+
+.animal.active {
+    background-color: rgba(255, 210, 60, 0.65);
+    transform: scale(1.1);
+    box-shadow: 0 0 25px gold;
+}
+
+#musicButton {
+    margin: 25px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    background-color: #ffcc33;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#musicButton:hover {
+    background-color: #ffe066;
+    transform: scale(1.05);
+}
+
+/* Responsive design using media query */
+@media screen and (max-width: 900px) {
+    .animals-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header h1 {
+        font-size: 38px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .animals-container {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+}
